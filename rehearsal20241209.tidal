@@ -1,0 +1,110 @@
+bpm = 90
+
+setcps (bpm/60/4)
+
+-- 前半
+
+-- 1. Innocent / 水蚕ノ伝 3:40
+
+-- DJのみ
+
+
+-- 2. パレード 3:30 
+
+-- oFで雨の音
+
+d1
+  $ slow 4
+  $ someCyclesBy 0.3 (mix (((choose [(1/32),(1/16),(3/32)]) ~>).(# n (innerJoin $ choose ["cs5","a4"])).(|* amp 0.8)))
+  $ s "~ [~vibratoSineWave ~~] ~ ~"
+  # n (innerJoin $ choose ["fs5","a5"])
+  # sustain 11
+  # room 0.9 # sz 0.9 # dry 4
+  # pF "octaveMix" 0.8
+  # orbit 0
+  # vibratoFreq 10 # vibratoDepth 0.3
+  # tremolorate (range 5 9 rand) # tremolodepth 0.7
+  # pingpong 0.5 # pingpongt (3/8) # pingpongfb 0.6
+  # resi 1
+  # theta (range (-0.1) 0.1 rand)
+  # amp (range 0.18 0.25 $ slow 1.4 rand)
+
+d2
+  $ slow 1
+  $ degradeBy 0.8
+  $ s "[~cable]*2"
+  # speed (choose [0.5,0.75,1])
+  # room 0.1
+  # n (choose [0..4])
+  # theta (range (-1) 1 $ fast 7 rand)
+  # amp 0.23
+
+d3
+  $ s "~ gagaku/4"
+  # n (choose [0,1])
+  # up "<-5,-12,-4>"
+  # room 0.8 # sz 0.989
+  # lpf 1300
+  # amp 0.26
+
+d4
+  $ degradeBy 0.9
+  $ s "rustling*5"
+  # amp (range 0.001 0.005 rand)
+  # sustain (range 2 10 $ slow 2 sine)
+  # theta (line)
+  # resi 1
+
+d5
+  $ slow 1.5
+  $ s "ice?"
+  # n (choose [0,1,2])
+  # start 0.8
+  # resi 1
+  # amp 0.2
+  # orbit 5
+
+
+-- 3. 百式 15:00
+
+
+-- 後半
+
+-- 4. 草達磨と残雪 12:20
+
+-- 中盤まではDJのみ
+
+-- 「だけど、その夢の中の少年は〜目を覚ましているのだそうなのです。」でDJ終わり
+
+-- 次の「クズ　キリ」から
+
+
+-- 5. Type-β 3:20
+
+once
+  $ s "coin"
+  # resi 1
+  # room 0.9 # sz 0.99 # dry 4
+  # speed (range 0.8 0.5 rand)
+  # scReverb 0.8 # ice 1
+  # theta 0.0
+  # lpf 6000
+  # amp 0.6
+  # orbit 11
+
+-- 6. 火星の植物 5:28
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,14 @@
+bpm = 90
+
+setcps (bpm/60/4)
+
+
+d7
+  $ degradeBy 0.3
+  $ s "birds"
+  # n (choose [0..7])
+  # resi 1
+  # scReverb 0.7
+  # theta (range (-1) 1 rand)
+  # amp 0.01
+
