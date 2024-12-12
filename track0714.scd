@@ -29,7 +29,7 @@ c.set(\amp, 2*vol, \hpf, 100, \lpf, 300, \freq, 0.25*493.883*(2**(0/12)), \detun
 
 
 s = Synth(\saw, [\amp, 0])
-s.set(\amp, 2.5,\freq, 164*0.25,\bpf, 164*0.5, \reverb, 0.9, \pan2Freq, 103*2.0, \parFreq, 110*2.0, \ice, 0.0, \vibratoDepth, 1, \vibratoFreq, 10)
+s.set(\amp, 1,\freq, 164*0.25,\bpf, 164*0.5, \reverb, 0.9, \pan2Freq, 103*2.0, \parFreq, 110*2.0, \ice, 0.0, \vibratoDepth, 1, \vibratoFreq, 10)
 
 x = Synth(\sine, [\amp, 0])
 x.set(\amp, 0.4, \freq, 164*(2**(1/12)), \parFreq, 0, \pan2Freq, 0, \vibratoFreq, 3, \vibratoDepth, 0, \reverb, 0, \ice, 0)

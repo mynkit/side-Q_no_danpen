@@ -1,4 +1,4 @@
-// c: 261.626
+∫// c: 261.626
 // cs: 277.183
 // d: 293.665
 // ds: 311.127
@@ -25,11 +25,11 @@ e = Synth(\pad, [\amp, 0, \freq, 329.628*0.25]);
 
 (
 var vol2 = 1;
-a.set(\amp, 1*vol2, \freq, 493.883*(2**(-36/12)), \detune, 0.5);
-d.set(\amp, 0.6*vol2, \freq, 493.883*(2**(-24/12)), \detune, 0.1);
-b.set(\amp, 0.9*vol2, \freq, 110, \parFreq, 0.2, \reverb, 1, \ice, 0.3, \pan2Freq, 0);
-c.set(\amp, 0.9*vol2, \freq, 112, \parFreq, 0.7, \reverb, 1, \ice, 0.3,  \pan2Freq, 0.1);
-e.set(\amp, 0.8*vol2, \freq, 329.628*0.25);
+a.set(\amp, 0.0*vol2, \freq, 493.883*(2**(-36/12)), \detune, 0.5);
+d.set(\amp, 0.0*vol2, \freq, 493.883*(2**(-0/12)), \detune, 0.1);
+b.set(\amp, 0.0*vol2, \freq, 110, \parFreq, 0.2, \reverb, 1, \ice, 0.3, \pan2Freq, 0);
+c.set(\amp, 0.0*vol2, \freq, 112, \parFreq, 0.7, \reverb, 1, \ice, 0.3,  \pan2Freq, 0.1);
+e.set(\amp, 0.0*vol2, \freq, 329.628*0.25);
 )
 
 (
@@ -44,27 +44,27 @@ e.free;
 
 
 x = Synth(\sine, [\amp, 0]);
-x.set(\amp, 0.3, \freq, 164.814*(2**(1/12)), \parFreq, 0, \pan2Freq, 0, \vibratoFreq, 2, \vibratoDepth, 0.02, \reverb, 0.4, \ice, 0);
+x.set(\amp, 0.1, \freq, 164.814*(2**(1/12)), \parFreq, 0, \pan2Freq, 0, \vibratoFreq, 2, \vibratoDepth, 0.02, \reverb, 0.4, \ice, 0);
 
 
 y = Synth(\sine, [\amp, 0])
-y.set(\amp, 0.3, \freq, 164.814*(2**(12/12)), \parFreq, 0, \pan2Freq, 0.1, \vibratoFreq, 5, \vibratoDepth, 0.2, \reverb, 0.8, \ice, 0);
+y.set(\amp, 0.1, \freq, 164.814*(2**(12/12)), \parFreq, 0, \pan2Freq, 0.1, \vibratoFreq, 5, \vibratoDepth, 0.2, \reverb, 0.8, \ice, 0);
 
 z = Synth(\sine, [\amp, 0])
-z.set(\amp, 0.3, \freq, 164.814*(2**(9/12)), \parFreq, 0, \pan2Freq, 0.1, \vibratoFreq, 5, \vibratoDepth, 0.0, \reverb, 0.7, \ice, 0);
+z.set(\amp, 0.1, \freq, 164.814*(2**(9/12)), \parFreq, 0, \pan2Freq, 0.1, \vibratoFreq, 5, \vibratoDepth, 0.0, \reverb, 0.7, \ice, 0);
 
 w = Synth(\sine, [\amp, 0])
-w.set(\amp, 0.3, \freq, 164.814*(2**(14/12)), \parFreq, 0, \pan2Freq, 0.1, \vibratoFreq, 5, \vibratoDepth, 0.0, \reverb, 0.4, \ice, 0);
+w.set(\amp, 0.1, \freq, 164.814*(2**(14/12)), \parFreq, 0, \pan2Freq, 0.1, \vibratoFreq, 5, \vibratoDepth, 0.0, \reverb, 0.4, \ice, 0);
 
 (
-x.set(\amp, 0.3, \freq, 164.814*(2**(1/12)), \parFreq, 0, \pan2Freq, 0, \vibratoFreq, 6, \vibratoDepth, 0.09, \reverb, 0.4, \ice, 0);
-y.set(\amp, 0.3, \freq, 164.814*(2**(12/12)), \parFreq, 0, \pan2Freq, 0.1, \vibratoFreq, 5, \vibratoDepth, 0.2, \reverb, 0.8, \ice, 0);
-z.set(\amp, 0.3, \freq, 164.814*(2**(9/12)), \parFreq, 0, \pan2Freq, 0.1, \vibratoFreq, 5, \vibratoDepth, 0.0, \reverb, 0.7, \ice, 0);
-w.set(\amp, 0.3, \freq, 164.814*(2**(14/12)), \parFreq, 0, \pan2Freq, 0.1, \vibratoFreq, 5, \vibratoDepth, 0.0, \reverb, 0.4, \ice, 0);
+x.set(\amp, 0.1, \freq, 164.814*(2**(1/12)), \parFreq, 0, \pan2Freq, 0, \vibratoFreq, 6, \vibratoDepth, 0.09, \reverb, 0.4, \ice, 0);
+y.set(\amp, 0.2, \freq, 164.814*(2**(12/12)), \parFreq, 0, \pan2Freq, 0.1, \vibratoFreq, 5, \vibratoDepth, 0.2, \reverb, 0.8, \ice, 0);
+z.set(\amp, 0.1, \freq, 164.814*(2**(9/12)), \parFreq, 0, \pan2Freq, 0.1, \vibratoFreq, 5, \vibratoDepth, 0.0, \reverb, 0.7, \ice, 0);
+w.set(\amp, 0.2, \freq, 164.814*(2**(14/12)), \parFreq, 0, \pan2Freq, 0.1, \vibratoFreq, 5, \vibratoDepth, 0.0, \reverb, 0.4, \ice, 0);
 )
 
 (
-var vol = 0.3;
+var vol = 0.0;
 x.set(\amp, 0.4*vol, \freq, 164.814*(2**(-24/12)), \parFreq, 0, \pan2Freq, 10, \vibratoFreq, 3, \vibratoDepth, 0.2, \reverb, 0.4, \ice, 0);
 y.set(\amp, 0.7*vol, \freq, 164.814*(2**(0/12)), \parFreq, 20, \pan2Freq, 0.1, \vibratoFreq, 5, \vibratoDepth, 0.2, \reverb, 0.8, \ice, 0);
 z.set(\amp, 0.7*vol, \freq, 164.814*(2**(2/12)), \parFreq, 0, \pan2Freq, 110, \vibratoFreq, 5, \vibratoDepth, 0.0, \reverb, 0.7, \ice, 0);
@@ -92,4 +92,23 @@ w.free;
 
 // 6. 火星の植物 5:28
 
+s = Synth(\saw, [\amp, 0])
+s.set(\amp, 0,\freq, 164*0.25,\bpf, 164*0.5, \reverb, 0.9, \pan2Freq, 103*2.0, \parFreq, 110*2.0, \ice, 0.0, \vibratoDepth, 1, \vibratoFreq, 10)
 
+
+(
+a = Synth(\zureSc, [\amp, 0, \freq, 329.628*0.25, \hpf, 100, \lpf, 300, \detune, 1]);
+b = Synth(\zureSc, [\amp, 0, \freq, 261.626*0.5, \hpf, 100, \lpf, 300, \detune, 0.1]);
+c = Synth(\zureSc, [\amp, 0, \freq, 493.883*1, \hpf, 100, \lpf, 300, \detune, 0.03]);
+)
+
+(
+a.set(\amp, 0.0,  \freq, 329.628*(2**(-12/12)), \detune, 0.15);
+b.set(\amp, 0.0, \freq, 261.626*(2**(-12/12)), \detune, 0.2);
+c.set(\amp, 0.0, \freq, 493.883*(2**(12/12)), \detune, 0.13);
+)
+(
+a.free;
+b.free;
+c.free;
+)
