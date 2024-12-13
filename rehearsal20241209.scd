@@ -24,12 +24,12 @@ e = Synth(\pad, [\amp, 0, \freq, 329.628*0.25]);
 )
 
 (
-var vol2 = 1;
-a.set(\amp, 0.0*vol2, \freq, 493.883*(2**(-36/12)), \detune, 0.5);
-d.set(\amp, 0.0*vol2, \freq, 493.883*(2**(-0/12)), \detune, 0.1);
-b.set(\amp, 0.0*vol2, \freq, 110, \parFreq, 0.2, \reverb, 1, \ice, 0.3, \pan2Freq, 0);
-c.set(\amp, 0.0*vol2, \freq, 112, \parFreq, 0.7, \reverb, 1, \ice, 0.3,  \pan2Freq, 0.1);
-e.set(\amp, 0.0*vol2, \freq, 329.628*0.25);
+var vol2 = 0;
+a.set(\amp, 0.5*vol2, \freq, 493.883*(2**(-36/12)), \detune, 0.5);
+d.set(\amp, 0.8*vol2, \freq, 493.883*(2**(-0/12)), \detune, 0.1);
+b.set(\amp, 0.3*vol2, \freq, 110, \parFreq, 0.2, \reverb, 1, \ice, 0.3, \pan2Freq, 0);
+c.set(\amp, 0.4*vol2, \freq, 112, \parFreq, 0.7, \reverb, 1, \ice, 0.3,  \pan2Freq, 0.1);
+e.set(\amp, 0.3*vol2, \freq, 329.628*0.25);
 )
 
 (
@@ -41,6 +41,12 @@ e.free;
 )
 
 // 3. 百式
+
+f = Synth(\saw, [\amp, 0]);
+
+f.set(\amp, 1, \freq, 164.814*0.25, \parFreq, 110*4, \reverb, 1, \ice, 0, \pan2Freq, 103.826*2, \bpf, 164.814*1, \vibrato, 0.5, \vrate, 8);
+
+f.free
 
 
 x = Synth(\sine, [\amp, 0]);
@@ -112,3 +118,26 @@ a.free;
 b.free;
 c.free;
 )
+
+
+
+(
+a = Synth(\zureSc, [\amp, 0, \freq, 329.628*0.25, \hpf, 100, \lpf, 300, \detune, 1]);
+b = Synth(\zureSc, [\amp, 0, \freq, 261.626*0.5, \hpf, 100, \lpf, 300, \detune, 0.1]);
+c = Synth(\zureSc, [\amp, 0, \freq, 493.883*1, \hpf, 100, \lpf, 300, \detune, 0.03]);
+)
+
+(
+var vol = 0.4;
+a.set(\amp, 2*vol, \freq, 329.628*0.25, \hpf, 50, \lpf, 300);
+b.set(\amp, 2*vol, \freq, 261.626*0.125, \hpf, 100, \lpf, 300);
+c.set(\amp, 2*vol, \hpf, 100, \lpf, 300, \freq, 0.25*493.883*(2**(0/12)), \detune, 0.1)
+)
+
+
+s = Synth(\saw, [\amp, 0])
+s.set(\amp, 1,\freq, 164*0.25,\bpf, 164*0.5, \reverb, 0.9, \pan2Freq, 103*2.0, \parFreq, 110*2.0, \ice, 0.0, \vibratoDepth, 1, \vibratoFreq, 10)
+
+x = Synth(\sine, [\amp, 0])
+x.set(\amp, 0.4, \freq, 164*(2**(1/12)), \parFreq, 0, \pan2Freq, 0, \vibratoFreq, 3, \vibratoDepth, 0, \reverb, 0, \ice, 0)
+x.set(\amp, 0.3,\freq, 164*(2**(5/12)), \reverb, 0.9, \pan2Freq, 0.2, \parFreq, 110*3, \ice, 0.4, \vibratoDepth, 1.5, \vibratoFreq, 10)
