@@ -338,12 +338,6 @@ d3
   # n (choose [0..7])
   # room 0.9 # sz 0.4 # dry 3
 
-d4
-  $ degradeBy 0.08
-  $ s "guitarrr/4"
-  # n "<8,10>"
-  # room 0.9 # sz 0.7 # dry 3
-  # amp 0.07
   
 d5
   $ fast (choose [0.5,1,2])
