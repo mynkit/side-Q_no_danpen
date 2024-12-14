@@ -74,6 +74,70 @@ do
     # resi 1
     -- # room 0.3 # sz 0.3
 
+d6
+  $ slow 2
+  $ mix ((|+ n 5).(|* amp 0.6))
+  $ s (fit 0 ["padDirt"] "~0 0~ ~~ ~~ ~0/2 ~~ 0/4~ ~~")
+  # n "<cs4 e4> <fs5,a4> ~ ~  <e5> ~ <cs3> ~"
+  # amp 0.5
+  # room 0.8 # sz 0.9
+  # resi 1
+  # hpf 150
+  # pingpong 0.7 # pingpongt (3/16) # pingpongfb 0.7
+  # sustain 3
+
+-- 
+
+d1
+  $ sometimesBy 0.8 (|+ n (choose [0..2]))
+  $ s "record/2"
+  # n 7
+  # hpf 100
+  # amp 0.4
+
+d2
+  $ slow (range 1 4 rand)
+  $ sometimesBy 0.03 (|* speed (-1))
+  $ s "~ [~cassette] ~ cassette"
+  # speed (range 1 0.5 $ slow 3 rand)
+  # n (choose [4,6,7,8,9,10])
+  -- # cut 1
+  # lpf 5000
+  # resi (slow 6 $ sine * 0.3)
+  # theta (range (-0.3) 0.3 $ fast 7 rand)
+  # amp (range 0.0 0.2 $ slow 5 rand)
+
+d3
+  $ degradeBy 0.3
+  $ s "cable*4"
+  # n (choose [0..4])
+  # amp 0.2
+
+
+d4
+  $ slow 4
+  $ (0.27 ~>)
+  $ mix ((|- n 5).(|* amp 0.6))
+  $ s "vibratoSineWave ~ [~[~vibratoSineWave]] ~"
+  # sustain 10
+  # n "<fs5,cs5> ~ <a5,fs5> <a5,fs5>"
+  # vibratoFreq 10 # vibratoDepth 0.9
+  # tremolorate 15 # tremolodepth 0.4
+  # resi 1
+  # scReverb 0.9
+  # room 0.8 # sz 0.9 # dry 2
+  # pingpong 0.9 # pingpongt (3/4) # pingpongfb 0.6
+  # amp 0.15
+
+
+d5
+  $ s "~ simpleSawWave/4"
+  # n "<e2>"
+  # sustain 3
+  # hpf 50 # hpq 0.3
+  # lpf 700
+  # amp 0.25
+
 
 
 
