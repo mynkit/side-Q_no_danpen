@@ -35,15 +35,15 @@ p = Synth(\superhammondSc, [\amp, 0.0, \freq, 277.183, \vibrato, 1.0, \vrate, 32
 )
 
 (
-var vol = 0.8, n = 0;
+var vol = 0.1, n = 0;
 l.set(\amp, 0.5*vol, \freq, 277.183*0.5*(2**(0+n/12)), \reverb, 0.8, \vibrato, 1, \vrate, 16, \lpf, 4000, \hpf, 100,\tremolorate, 2, \tremolodepth, 0.2, \pan, -0.1);
 m.set(\amp, 0.4*vol, \freq, 277.183*0.5*(2**(4+n/12)), \reverb, 0.6, \vibrato, 1, \vrate, 32, \lpf, 4000, \hpf, 100, \tremolorate, 8, \tremolodepth, 0.1, \pan, -0.5);
-o.set(\amp, 0.4*vol, \freq, 277.183*0.5*(2**(5+n/12)), \reverb, 0.7, \vibrato, 1, \vrate, 28, \lpf, 4000, \hpf, 100, \tremolorate, 20, \tremolodepth, 0.1, \pan, 0.5);
+o.set(\amp, 0.4*vol, \freq, 277.183*0.5*(2**(7+n/12)), \reverb, 0.7, \vibrato, 1, \vrate, 28, \lpf, 4000, \hpf, 100, \tremolorate, 20, \tremolodepth, 0.1, \pan, 0.5);
 p.set(\amp, 0.5*vol, \freq, 277.183*0.5*(2**(-12+n/12)), \reverb, 0.7, \vibrato, 1, \vrate, 28, \lpf, 4000, \hpf, 100, \tremolorate, 20, \tremolodepth, 0.1, \pan, 0.1);
 )
 
 (
-var vol = 0.8;
+var vol = 0.7;
 var n = 0; // 初期値
 var bpm = 90; // BPM
 var beatsPerMeasure = 4; // 1小節の拍数（通常は4拍）
@@ -97,6 +97,9 @@ m.free;
 o.free;
 p.free;
 )
+
+
+// architected noise
 
 
 

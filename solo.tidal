@@ -29,7 +29,7 @@ d2
   # theta (line)
   # amp 0.13
 
-d4
+d3
   $ slow 4
   $ (|- up (choose [24,20,17]))
   $ s "coffee"
@@ -39,23 +39,23 @@ d4
   # theta 0
   # amp 0.1
 
-d5
+d4
   $ when ((/=3).(flip mod 8)) (degradeBy 1)
-  $ whenmod 16 8  (|+ n (3))
+  $ whenmod 16 8  (|- n (5))
   $ mix ((|- n 12).(|* amp 0.3))
   $ s "~ ~ [~FastSinSynth]~"
-  # n "<fs6,cs7>"
+  # n "<e5,a6>"
   # theta (-1)
   # sustain 12
   # resi 1
   # room 0.9 # sz 0.9 # dry 4
   # pingpong 0.7 # pingpongt (3/8) # pingpongfb 0.7
-  # amp 0.15
+  # amp 0.1
 
 do
   let
     speed = (1 + (0.1 * (5))) * (range 0.4 0.3 rand)
-  d3
+  d5
     $ (|* amp 2)
     $ (|* freq speed)
     $ (|* sustain (1/speed))
@@ -74,6 +74,13 @@ do
     # resi 1
     -- # room 0.3 # sz 0.3
 
+d7
+  -- $ degradeBy 0.08
+  $ s "guitarrr/4"
+  # n "<8,10>"
+  # room 0.9 # sz 0.7 # dry 3
+  # amp 0.15
+
 d6
   $ slow 2
   $ mix ((|+ n 5).(|* amp 0.6))
@@ -86,7 +93,10 @@ d6
   # pingpong 0.7 # pingpongt (3/16) # pingpongfb 0.7
   # sustain 3
 
--- 
+
+
+
+-- architected noise
 
 d1
   $ sometimesBy 0.8 (|+ n (choose [0..2]))
@@ -97,7 +107,7 @@ d1
 
 d2
   $ slow (range 1 4 rand)
-  $ sometimesBy 0.03 (|* speed (-1))
+  $ sometimesBy 0.09 (|* speed (-1))
   $ s "~ [~cassette] ~ cassette"
   # speed (range 1 0.5 $ slow 3 rand)
   # n (choose [4,6,7,8,9,10])
