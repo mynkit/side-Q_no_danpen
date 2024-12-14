@@ -1,13 +1,13 @@
 x = Synth(\sine, [\amp, 0])
 
-x.set(\amp, 0,\freq, 329.628*0.25, \reverb, 0.9, \pan2Freq, 0.0, \parFreq, 0*3, \ice, 0.3, \vibratoDepth, 1, \vibratoFreq, 10)
+x.set(\amp, 1,\freq, 329.628*0.25, \reverb, 0.9, \pan2Freq, 0.0, \parFreq, 0*3, \ice, 0.3, \vibratoDepth, 1, \vibratoFreq, 10)
 
 
 y = Synth(\sine, [\amp, 0])
 
-y.set(\amp, 0.1,\freq, 493.883*0.5, \reverb, 0.9, \pan2Freq, 0.0, \parFreq, 0*0, \ice, 0.0, \vibratoDepth, 0.4, \vibratoFreq, 4)
+y.set(\amp, 0.8,\freq, 493.883*0.5, \reverb, 0.9, \pan2Freq, 0.0, \parFreq, 0*0, \ice, 0.0, \vibratoDepth, 0.4, \vibratoFreq, 4)
 
-y.set(\amp, 0.1,\freq, 329.628*0.75, \reverb, 0.9, \pan2Freq, 1.5, \parFreq, 0*3, \ice, 0.4, \vibratoDepth, 0.4, \vibratoFreq, 4)
+y.set(\amp, 0.8,\freq, 329.628*0.75, \reverb, 0.9, \pan2Freq, 1.5, \parFreq, 0*3, \ice, 0.4, \vibratoDepth, 0.4, \vibratoFreq, 4)
 
 
 (
@@ -19,7 +19,7 @@ c = Synth(\zureSc, [\amp, 0, \freq, 493.883*1, \hpf, 100, \lpf, 300, \detune, 0.
 (
 a.set(\amp, 1,  \freq, 329.628*(2**(-12/12)), \detune, 0.15);
 b.set(\amp, 1, \freq, 261.626*(2**(-12/12)), \detune, 0.2);
-c.set(\amp, 1.5, \freq, 493.883*(2**(-0/12)), \detune, 0.13);
+c.set(\amp, 1, \freq, 493.883*(2**(-0/12)), \detune, 0.13);
 )
 (
 a.free;

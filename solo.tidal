@@ -1,0 +1,126 @@
+bpm = 90
+
+setcps (bpm/60/4)
+
+all $ (|* amp 1.0)
+
+
+-- intro
+
+d1
+  $ slow 2
+  $ degradeBy 0.5
+  $ (|- up (choose [0,5,12,4]))
+  $ s "coffee"
+  # n (choose ([10,11,12]))
+  # up "<0,2,4,12>"
+  # room 0.9 # sz 0.97 # dry 0
+  # resi 1
+  # theta (line)
+  # amp 0.2
+
+d2
+  $ slow 4
+  $ (|- up (choose [12..24]))
+  $ s "coffee"
+  # n (choose ([1]))
+  # up "<0,2,4,12>"
+  # room 0.9 # sz 0.97 # dry 3
+  # theta (line)
+  # amp 0.13
+
+d4
+  $ slow 4
+  $ (|- up (choose [24,20,17]))
+  $ s "coffee"
+  # n "<13,14>"
+  # up "<0,7,4,12>"
+  # room 0.9 # sz 0.97 # dry 4
+  # theta 0
+  # amp 0.1
+
+d5
+  $ when ((/=3).(flip mod 8)) (degradeBy 1)
+  $ whenmod 16 8  (|+ n (3))
+  $ mix ((|- n 12).(|* amp 0.3))
+  $ s "~ ~ [~FastSinSynth]~"
+  # n "<fs6,cs7>"
+  # theta (-1)
+  # sustain 12
+  # resi 1
+  # room 0.9 # sz 0.9 # dry 4
+  # pingpong 0.7 # pingpongt (3/8) # pingpongfb 0.7
+  # amp 0.15
+
+do
+  let
+    speed = (1 + (0.1 * (5))) * (range 0.4 0.3 rand)
+  d3
+    $ (|* amp 2)
+    $ (|* freq speed)
+    $ (|* sustain (1/speed))
+    $ (|* accelerate speed)
+    $ ((1/4)~>)
+    $ someCyclesBy 0.3 (degradeBy 1)
+    $ someCyclesBy 0.7 (mix (((choose [(3/32),(1/32)])~>).(|* amp 0.6).(|* freq 2).(|* sustain 0.5)))
+    $ s "simpleSineWave/2!4 ~!200"
+    # freq "4000 3037 1582 505!201"
+    # sustain "0.01 0.02 0.05 0.07!201"
+    # accelerate "2.2 3.1 4.9 5!201"
+    # amp "0.1 0.2 0.3 0.2!201"
+    # theta (0.3 * fast 5 line) # dis 1
+    # hpf 2000
+    # lpf 7000
+    # resi 1
+    -- # room 0.3 # sz 0.3
+
+
+
+
+-- 怪穏
+
+d1
+  $ slow 2
+  -- $ degradeBy 0.7
+  $ s "~ ice:2/2"
+  # room 0.9 # sz 0.98
+  # resi 1
+  -- # end 0.35
+  # speed (range 0.5 0.6 rand)
+  # lpf (1000)
+  # theta 0.2
+  # amp 0.6
+
+
+d2
+  $ slow 2
+  $ fast 1.5
+  -- $ degradeBy 0.4
+  -- $ someCyclesBy 0.5 (degradeBy 1)
+  $ s "~ guitar_async:20/4"
+  # up 24
+  -- # scReverb 0.9
+  # resi 1
+  # room 0.9 # sz 0.98
+  -- # pingpong 0.9 # pingpongt (3/16) # pingpongfb 0.9
+  # lpf 1500
+  # theta (-0.2)
+  # amp 0.5
+
+
+d3
+  $ slow 4
+  $ degradeBy 0.6
+  $ s "cucumber*3"
+  # n (choose [0,1,2])
+  # up (-12)
+  # lpf (1000 * 1)
+  # amp 0.2
+  # theta 0
+  # resi 1
+  # room 0.9 # sz 0.9
+
+
+
+
+
