@@ -50,23 +50,23 @@ f.free
 
 
 x = Synth(\sine, [\amp, 0]);
-x.set(\amp, 0.1, \freq, 164.814*(2**(1/12)), \parFreq, 0, \pan2Freq, 0, \vibratoFreq, 2, \vibratoDepth, 0.02, \reverb, 0.4, \ice, 0);
+x.set(\amp, 0.4, \freq, 164.814*(2**(1/12)), \parFreq, 0, \pan2Freq, 0, \vibratoFreq, 2, \vibratoDepth, 0.02, \reverb, 0.4, \ice, 0);
 
 
 y = Synth(\sine, [\amp, 0])
-y.set(\amp, 0.1, \freq, 164.814*(2**(12/12)), \parFreq, 0, \pan2Freq, 0.1, \vibratoFreq, 5, \vibratoDepth, 0.2, \reverb, 0.8, \ice, 0);
+y.set(\amp, 0.4, \freq, 164.814*(2**(12/12)), \parFreq, 0, \pan2Freq, 0.1, \vibratoFreq, 5, \vibratoDepth, 0.2, \reverb, 0.8, \ice, 0);
 
 z = Synth(\sine, [\amp, 0])
-z.set(\amp, 0.1, \freq, 164.814*(2**(9/12)), \parFreq, 0, \pan2Freq, 0.1, \vibratoFreq, 5, \vibratoDepth, 0.0, \reverb, 0.7, \ice, 0);
+z.set(\amp, 0.4, \freq, 164.814*(2**(9/12)), \parFreq, 0, \pan2Freq, 0.1, \vibratoFreq, 5, \vibratoDepth, 0.0, \reverb, 0.7, \ice, 0);
 
 w = Synth(\sine, [\amp, 0])
-w.set(\amp, 0.1, \freq, 164.814*(2**(14/12)), \parFreq, 0, \pan2Freq, 0.1, \vibratoFreq, 5, \vibratoDepth, 0.0, \reverb, 0.4, \ice, 0);
+w.set(\amp, 0.4, \freq, 164.814*(2**(14/12)), \parFreq, 0, \pan2Freq, 0.1, \vibratoFreq, 5, \vibratoDepth, 0.0, \reverb, 0.4, \ice, 0);
 
 (
-x.set(\amp, 0.1, \freq, 164.814*(2**(1/12)), \parFreq, 0, \pan2Freq, 0, \vibratoFreq, 6, \vibratoDepth, 0.09, \reverb, 0.4, \ice, 0);
-y.set(\amp, 0.2, \freq, 164.814*(2**(12/12)), \parFreq, 0, \pan2Freq, 0.1, \vibratoFreq, 5, \vibratoDepth, 0.2, \reverb, 0.8, \ice, 0);
-z.set(\amp, 0.1, \freq, 164.814*(2**(9/12)), \parFreq, 0, \pan2Freq, 0.1, \vibratoFreq, 5, \vibratoDepth, 0.0, \reverb, 0.7, \ice, 0);
-w.set(\amp, 0.2, \freq, 164.814*(2**(14/12)), \parFreq, 0, \pan2Freq, 0.1, \vibratoFreq, 5, \vibratoDepth, 0.0, \reverb, 0.4, \ice, 0);
+x.set(\amp, 0.4, \freq, 164.814*(2**(1/12)), \parFreq, 0, \pan2Freq, 0, \vibratoFreq, 6, \vibratoDepth, 0.09, \reverb, 0.4, \ice, 0);
+y.set(\amp, 0.4, \freq, 164.814*(2**(12/12)), \parFreq, 0, \pan2Freq, 0.1, \vibratoFreq, 5, \vibratoDepth, 0.2, \reverb, 0.8, \ice, 0);
+z.set(\amp, 0.4, \freq, 164.814*(2**(9/12)), \parFreq, 0, \pan2Freq, 0.1, \vibratoFreq, 5, \vibratoDepth, 0.0, \reverb, 0.7, \ice, 0);
+w.set(\amp, 0.4, \freq, 164.814*(2**(14/12)), \parFreq, 0, \pan2Freq, 0.1, \vibratoFreq, 5, \vibratoDepth, 0.0, \reverb, 0.4, \ice, 0);
 )
 
 (
