@@ -13,7 +13,7 @@
 
 // intro
 
-Ndef(\fire).play(vol: 200, numChannels: ~numChannels, fadeTime: 1);
+Ndef(\fire).play(vol: 10, numChannels: ~numChannels, fadeTime: 1);
 Ndef(\fire).stop;
 Ndef(\fire).clear;
 
@@ -35,7 +35,7 @@ p = Synth(\superhammondSc, [\amp, 0.0, \freq, 277.183, \vibrato, 1.0, \vrate, 32
 )
 
 (
-var vol = 0.6, n = 0;
+var vol = 0.9, n = 0;
 l.set(\amp, 0.5*vol, \freq, 277.183*0.5*(2**(0+n/12)), \reverb, 0.8, \vibrato, 1, \vrate, 16, \lpf, 4000, \hpf, 100,\tremolorate, 2, \tremolodepth, 0.2, \pan, -0.1);
 m.set(\amp, 0.4*vol, \freq, 277.183*0.5*(2**(3+n/12)), \reverb, 0.6, \vibrato, 1, \vrate, 32, \lpf, 4000, \hpf, 100, \tremolorate, 8, \tremolodepth, 0.1, \pan, -0.5);
 o.set(\amp, 0.4*vol, \freq, 277.183*0.5*(2**(7+n/12)), \reverb, 0.7, \vibrato, 1, \vrate, 28, \lpf, 4000, \hpf, 100, \tremolorate, 20, \tremolodepth, 0.1, \pan, 0.5);
@@ -43,7 +43,6 @@ p.set(\amp, 0.5*vol, \freq, 277.183*0.5*(2**(-12+n/12)), \reverb, 0.7, \vibrato,
 )
 
 (
-var vol = 0.7;
 var n = 5; // 初期値
 var bpm = 90; // BPM
 var beatsPerMeasure = 4; // 1小節の拍数（通常は4拍）
@@ -52,10 +51,10 @@ var updateParameters;
 
 // パラメータ更新関数
 updateParameters = {
-    l.set(\amp, 0.5 * vol, \freq, 277.183 * 0.5 * (2 ** (0 + n / 12)), \reverb, 0.8, \vibrato, 1, \vrate, 16, \lpf, 4000, \hpf, 100, \tremolorate, 2, \tremolodepth, 0.2, \pan, -0.1);
-    m.set(\amp, 0.4 * vol, \freq, 277.183 * 0.5 * (2 ** (7 + n / 12)), \reverb, 0.6, \vibrato, 1, \vrate, 32, \lpf, 4000, \hpf, 100, \tremolorate, 8, \tremolodepth, 0.1, \pan, -0.5);
-    o.set(\amp, 0.4 * vol, \freq, 277.183 * 0.5 * (2 ** (3 + n / 12)), \reverb, 0.7, \vibrato, 1, \vrate, 28, \lpf, 4000, \hpf, 100, \tremolorate, 20, \tremolodepth, 0.1, \pan, 0.5);
-    p.set(\amp, 0.5 * vol, \freq, 277.183 * 0.5 * (2 ** (-12 + n / 12)), \reverb, 0.7, \vibrato, 1, \vrate, 28, \lpf, 4000, \hpf, 100, \tremolorate, 20, \tremolodepth, 0.1, \pan, 0.1);
+    l.set(\freq, 277.183 * 0.5 * (2 ** (0 + n / 12)));
+	m.set(\freq, 277.183 * 0.5 * (2 ** (7 + n / 12)));
+	o.set(\freq, 277.183 * 0.5 * (2 ** (3 + n / 12)));
+    p.set(\freq, 277.183 * 0.5 * (2 ** (-12 + n / 12)));
 };
 
 // TempoClockを使用してBPMに同期
@@ -78,12 +77,20 @@ TempoClock.default.tempo = bpm / 60; // BPMを秒単位に変換
 )
 
 (
+var vol = 0.9, n = 0;
+l.set(\amp, 0.5*vol, \reverb, 0.8, \vibrato, 1, \vrate, 16, \lpf, 4000, \hpf, 100,\tremolorate, 2, \tremolodepth, 0.2, \pan, -0.1);
+m.set(\amp, 0.4*vol, \reverb, 0.6, \vibrato, 1, \vrate, 32, \lpf, 4000, \hpf, 100, \tremolorate, 8, \tremolodepth, 0.1, \pan, -0.5);
+o.set(\amp, 0.4*vol, \reverb, 0.7, \vibrato, 1, \vrate, 28, \lpf, 4000, \hpf, 100, \tremolorate, 20, \tremolodepth, 0.1, \pan, 0.5);
+p.set(\amp, 0.5*vol, \reverb, 0.7, \vibrato, 1, \vrate, 28, \lpf, 4000, \hpf, 100, \tremolorate, 20, \tremolodepth, 0.1, \pan, 0.1);
+)
+
+(
 ~task.reset;
 ~task.stop;
 )
 
 (
-var vol = 0.0, n = -12;
+var vol = 0.9, n = -12;
 l.set(\amp, 0.5*vol, \freq, 277.183*0.5*(2**(0+n/12)), \reverb, 0.8, \vibrato, 1, \vrate, 16, \lpf, 4000, \hpf, 100,\tremolorate, 2, \tremolodepth, 0.2, \pan, -0.1);
 m.set(\amp, 0.4*vol, \freq, 277.183*0.5*(2**(7+n/12)), \reverb, 0.6, \vibrato, 1, \vrate, 32, \lpf, 4000, \hpf, 100, \tremolorate, 8, \tremolodepth, 0.1, \pan, -0.5);
 o.set(\amp, 0.4*vol, \freq, 277.183*0.5*(2**(3+n/12)), \reverb, 0.7, \vibrato, 1, \vrate, 28, \lpf, 4000, \hpf, 100, \tremolorate, 20, \tremolodepth, 0.1, \pan, 0.5);
@@ -100,8 +107,6 @@ p.free;
 
 
 // architected noise
-
-
 
 
 
