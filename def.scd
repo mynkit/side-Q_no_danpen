@@ -20,9 +20,9 @@ ServerOptions.outDevices;
 (
 Server.default.options.inDevice_("BlackHole 2ch");
 Server.default.options.outDevice_("MacBook Proのス");
-Server.default.options.outDevice_("BlackHole 2ch");
+// Server.default.options.outDevice_("BlackHole 2ch");
 // Server.default.options.outDevice_("M2");
-// Server.default.options.outDevice_("M4");
+Server.default.options.outDevice_("M4");
 
 ~numChannels = 2;
 

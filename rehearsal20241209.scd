@@ -24,12 +24,12 @@ e = Synth(\pad, [\amp, 0, \freq, 329.628*0.25]);
 )
 
 (
-var vol2 = 0;
-a.set(\amp, 0.5*vol2, \freq, 493.883*(2**(-36/12)), \detune, 0.5);
+var vol2 = 0.0;
+a.set(\amp, 0.5*vol2, \freq, 493.883*(2**(-0/12)), \detune, 0.5);
 d.set(\amp, 0.8*vol2, \freq, 493.883*(2**(-0/12)), \detune, 0.1);
 b.set(\amp, 0.3*vol2, \freq, 110, \parFreq, 0.2, \reverb, 1, \ice, 0.3, \pan2Freq, 0);
-c.set(\amp, 0.4*vol2, \freq, 112, \parFreq, 0.7, \reverb, 1, \ice, 0.3,  \pan2Freq, 0.1);
-e.set(\amp, 0.3*vol2, \freq, 329.628*0.25);
+c.set(\amp, 0.2*vol2, \freq, 112, \parFreq, 0.7, \reverb, 1, \ice, 0.3,  \pan2Freq, 0.1);
+e.set(\amp, 0.2*vol2, \freq, 329.628*0.25);
 )
 
 (
@@ -44,7 +44,7 @@ e.free;
 
 f = Synth(\saw, [\amp, 0]);
 
-f.set(\amp, 1, \freq, 164.814*0.25, \parFreq, 110*4, \reverb, 1, \ice, 0, \pan2Freq, 103.826*2, \bpf, 164.814*1, \vibrato, 0.5, \vrate, 8);
+f.set(\amp, 0.0, \freq, 164.814*0.25, \parFreq, 110*4, \reverb, 1, \ice, 0, \pan2Freq, 103.826*2, \bpf, 164.814*1, \vibrato, 0.5, \vrate, 8);
 
 f.free
 
@@ -111,7 +111,7 @@ c = Synth(\zureSc, [\amp, 0, \freq, 493.883*1, \hpf, 100, \lpf, 300, \detune, 0.
 (
 a.set(\amp, 0.0,  \freq, 329.628*(2**(-12/12)), \detune, 0.15);
 b.set(\amp, 0.0, \freq, 261.626*(2**(-12/12)), \detune, 0.2);
-c.set(\amp, 0.0, \freq, 493.883*(2**(12/12)), \detune, 0.13);
+c.set(\amp, 0.0, \freq, 493.883*(2**(0/12)), \detune, 0.13);
 )
 (
 a.free;

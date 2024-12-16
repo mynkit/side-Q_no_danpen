@@ -35,9 +35,9 @@ p = Synth(\superhammondSc, [\amp, 0.0, \freq, 277.183, \vibrato, 1.0, \vrate, 32
 )
 
 (
-var vol = 0.9, n = 0;
-l.set(\amp, 0.5*vol, \freq, 277.183*0.5*(2**(0+n/12)), \reverb, 0.8, \vibrato, 1, \vrate, 16, \lpf, 4000, \hpf, 100,\tremolorate, 2, \tremolodepth, 0.2, \pan, -0.1);
-m.set(\amp, 0.4*vol, \freq, 277.183*0.5*(2**(3+n/12)), \reverb, 0.6, \vibrato, 1, \vrate, 32, \lpf, 4000, \hpf, 100, \tremolorate, 8, \tremolodepth, 0.1, \pan, -0.5);
+var vol = 0.3, n = 0;
+l.set(\amp, 0.5*vol, \freq, 277.183*0.5*(2**(2+n/12)), \reverb, 0.8, \vibrato, 1, \vrate, 16, \lpf, 4000, \hpf, 100,\tremolorate, 2, \tremolodepth, 0.2, \pan, -0.1);
+m.set(\amp, 0.4*vol, \freq, 277.183*0.5*(2**(4+n/12)), \reverb, 0.6, \vibrato, 1, \vrate, 32, \lpf, 4000, \hpf, 100, \tremolorate, 8, \tremolodepth, 0.1, \pan, -0.5);
 o.set(\amp, 0.4*vol, \freq, 277.183*0.5*(2**(7+n/12)), \reverb, 0.7, \vibrato, 1, \vrate, 28, \lpf, 4000, \hpf, 100, \tremolorate, 20, \tremolodepth, 0.1, \pan, 0.5);
 p.set(\amp, 0.5*vol, \freq, 277.183*0.5*(2**(-12+n/12)), \reverb, 0.7, \vibrato, 1, \vrate, 28, \lpf, 4000, \hpf, 100, \tremolorate, 20, \tremolodepth, 0.1, \pan, 0.1);
 )
@@ -77,7 +77,7 @@ TempoClock.default.tempo = bpm / 60; // BPMを秒単位に変換
 )
 
 (
-var vol = 0.9, n = 0;
+var vol = 0.0, n = 0;
 l.set(\amp, 0.5*vol, \reverb, 0.8, \vibrato, 1, \vrate, 16, \lpf, 4000, \hpf, 100,\tremolorate, 2, \tremolodepth, 0.2, \pan, -0.1);
 m.set(\amp, 0.4*vol, \reverb, 0.6, \vibrato, 1, \vrate, 32, \lpf, 4000, \hpf, 100, \tremolorate, 8, \tremolodepth, 0.1, \pan, -0.5);
 o.set(\amp, 0.4*vol, \reverb, 0.7, \vibrato, 1, \vrate, 28, \lpf, 4000, \hpf, 100, \tremolorate, 20, \tremolodepth, 0.1, \pan, 0.5);
@@ -114,14 +114,14 @@ p.free;
 
 x = Synth(\sine, [\amp, 0])
 
-x.set(\amp, 1,\freq, 329.628*0.25, \reverb, 0.9, \pan2Freq, 0.0, \parFreq, 0*3, \ice, 0.3, \vibratoDepth, 1, \vibratoFreq, 10)
+x.set(\amp, 0.5,\freq, 329.628*0.25, \reverb, 0.9, \pan2Freq, 0.0, \parFreq, 0*3, \ice, 0.3, \vibratoDepth, 1, \vibratoFreq, 10)
 
 
 y = Synth(\sine, [\amp, 0])
 
-y.set(\amp, 0.8,\freq, 493.883*0.5, \reverb, 0.9, \pan2Freq, 0.0, \parFreq, 0*0, \ice, 0.0, \vibratoDepth, 0.4, \vibratoFreq, 4)
+y.set(\amp, 0.0,\freq, 493.883*0.5, \reverb, 0.9, \pan2Freq, 0.0, \parFreq, 0*0, \ice, 0.0, \vibratoDepth, 0.4, \vibratoFreq, 4)
 
-y.set(\amp, 0.8,\freq, 329.628*0.75, \reverb, 0.9, \pan2Freq, 1.5, \parFreq, 0*3, \ice, 0.2, \vibratoDepth, 0.4, \vibratoFreq, 4)
+y.set(\amp, 0.0,\freq, 329.628*0.75, \reverb, 0.9, \pan2Freq, 1.5, \parFreq, 0*3, \ice, 0.4, \vibratoDepth, 0.4, \vibratoFreq, 4)
 
 
 (
@@ -136,9 +136,9 @@ c = Synth(\zureSc, [\amp, 0, \freq, 493.883*1, \hpf, 100, \lpf, 300, \detune, 0.
 )
 
 (
-a.set(\amp, 0.7,  \freq, 329.628*(2**(-12/12)), \detune, 0.15);
-b.set(\amp, 0.8, \freq, 261.626*(2**(-12/12)), \detune, 0.2);
-c.set(\amp, 0.7, \freq, 493.883*(2**(-12/12)), \detune, 0.13);
+a.set(\amp, 0.0,  \freq, 329.628*(2**(-12/12)), \detune, 0.15);
+b.set(\amp, 0.0, \freq, 261.626*(2**(-12/12)), \detune, 0.2);
+c.set(\amp, 0.0, \freq, 493.883*(2**(-12/12)), \detune, 0.13);
 )
 (
 a.free;
@@ -151,14 +151,14 @@ z = Synth(\sine, [\amp, 0])
 
 z.set(\amp, 0.0,\freq, 164*1, \reverb, 0.0, \pan2Freq, 103*0, \parFreq, 110*0, \ice, 0.0, \vibratoDepth, 0, \vibratoFreq, 10);
 
-z.set(\amp, 1,\freq, 164*1, \reverb, 0.9, \pan2Freq, 103*1, \parFreq, 110*3, \ice, 0.0, \vibratoDepth, 1.5, \vibratoFreq, 10);
+z.set(\amp, 0.0,\freq, 164*1, \reverb, 0.9, \pan2Freq, 103*1, \parFreq, 110*3, \ice, 0.0, \vibratoDepth, 1.5, \vibratoFreq, 10);
 
 z.set(\amp, 0)
 
 z.free
 
 s = Synth(\saw, [\amp, 0])
-s.set(\amp, 5,\freq, 164*0.25,\bpf, 164*0.5, \reverb, 0.9, \pan2Freq, 103*2.0, \parFreq, 110*2.0, \ice, 0.0, \vibratoDepth, 1, \vibratoFreq, 10);
+s.set(\amp, 3, \freq, 164*0.25,\bpf, 164*0.5, \reverb, 0.9, \pan2Freq, 103*2.0, \parFreq, 110*2.0, \ice, 0.0, \vibratoDepth, 1, \vibratoFreq, 10);
 
 
 s.set(\amp, 0)
@@ -179,8 +179,8 @@ e = Synth(\pad, [\amp, 0.0, \freq, 164.814*(2**(9/12))]);
 (
 var vol = 0.0;
 var up = 0;
-a.set(\amp, vol, \parFreq, 0.01, \freq, 164.814*(2**((4-48+up)/12)));
-b.set(\amp, vol, \parFreq, 0, \freq, 164.814*(2**((9-36+up)/12)));
+a.set(\amp, vol, \parFreq, 0.01, \freq, 164.814*(2**((4-12+up)/12)));
+b.set(\amp, vol, \parFreq, 0, \freq, 164.814*(2**((9-12+up)/12)));
 c.set(\amp, vol, \parFreq, 0.1, \freq, 164.814*(2**((16-24+up)/12)));
 d.set(\amp, vol, \parFreq, 0, \freq, 164.814*(2**((7-12+up)/12)));
 e.set(\amp, vol*0.5, \parFreq, 0.1, \freq, 164.814*(2**((12+up)/12)));
@@ -233,7 +233,7 @@ q.free;
 k = Synth(\saw, [\amp, 0, \freq, 110, \vibrato, 1, \vrate, 32, \lpf, 1000]);
 l = Synth(\saw, [\amp, 0, \freq, 220, \vibrato, 1, \vrate, 32, \lpf, 1000]);
 m = Synth(\saw, [\amp, 0, \freq, 330, \vibrato, 1, \vrate, 32, \lpf, 1000]);
-n = Synth(\saw, [\amp, 0, \freq, 55, \vibrato, 1, \vrate, 32, \lpf, 1000]);
+p = Synth(\saw, [\amp, 0, \freq, 55, \vibrato, 1, \vrate, 32, \lpf, 1000]);
 o = Synth(\saw, [\amp, 0, \freq, 165, \vibrato, 1, \vrate, 32, \lpf, 1000]);
 )
 
@@ -249,8 +249,8 @@ o.set(\amp, 0.3*masterVol, \freq, 415.305/2, \parFreq, 0.08, \reverb, 1, \pan2Fr
 (
 var masterVol = 0;
 k.set(\amp, 0.2*masterVol, \freq, 330, \parFreq, 0.22, \reverb, 1, \pan2Freq, 0.03, \bpf, 220);
-l.set(\amp, 0.25*masterVol, \freq, 220, \parFreq, 0.13, \reverb, 1, \pan2Freq, 0.07, \bpf, 220*1);
-m.set(\amp, 0.3*masterVol, \freq, 329.628/2, \parFreq, 0.1, \reverb, 1, \pan2Freq, 0.05, \bpf, 329.628*0.5);
+l.set(\amp, 0.25*masterVol, \freq, 329.628, \parFreq, 0.13, \reverb, 1, \pan2Freq, 0.07, \bpf, 220*1);
+m.set(\amp, 0.3*masterVol, \freq, 369.994/2, \parFreq, 0.1, \reverb, 1, \pan2Freq, 0.05, \bpf, 329.628*0.5);
 p.set(\amp, 0.3*masterVol, \freq, 277.183/2, \parFreq, 0.34, \reverb, 1, \pan2Freq, 0.1, \bpf, 277.183*0.5);
 o.set(\amp, 0.3*masterVol, \freq, 415.305/2, \parFreq, 0.08, \reverb, 1, \pan2Freq, 0.03, \bpf, 415.305*0.5);
 )
